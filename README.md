@@ -1,91 +1,61 @@
-<!-- 🖼️ Banner Section -->
+<!-- 🖼️ Banner -->
 ![Cat vs Dog Classifier Banner](assets/banner.png)
 
-# 🐱🐶 Cat vs Dog Image Classifier using Convolutional Neural Network (CNN)
+# 🐱🐶 Cat vs Dog Image Classifier using CNN
 
-A **Deep Learning project** built in **Python (TensorFlow + Keras)** to classify images of **cats** and **dogs**.  
-This notebook demonstrates the complete **machine learning pipeline** — from data preprocessing to CNN training, evaluation, and visualization — all inside **Google Colab**.
-
----
-
-## 🚀 Project Highlights
-
-| Feature | Description |
-|----------|--------------|
-| 🧠 **Model Type** | Convolutional Neural Network (CNN) |
-| 📂 **Dataset** | TensorFlow Cats vs Dogs Filtered Dataset |
-| 📊 **Visualization** | Accuracy, Loss, Confusion Matrix |
-| 🧮 **Evaluation Metrics** | Accuracy, Loss, F1 Score |
-| ☁️ **Platform** | Google Colab (Cloud-based) |
-| 🎯 **Goal** | Classify cat 🐱 vs dog 🐶 images accurately |
+A deep learning project built with **TensorFlow** and **Keras**, designed to classify images of **cats** and **dogs** with high accuracy.  
+Developed and trained entirely in **Google Colab**.
 
 ---
 
-## 📘 Overview
+## 📦 Dataset
 
-This project shows how **Convolutional Neural Networks** can automatically learn visual patterns from images to distinguish between two classes — cats and dogs.  
-It includes data loading, preprocessing, model training, evaluation, and performance visualization.
+The dataset used is the **“Cats vs Dogs Filtered”** dataset, available via TensorFlow’s public datasets.
 
----
+- **Training Data:** 2000 images (1000 Cats, 1000 Dogs)  
+- **Validation Data:** 1000 images (500 Cats, 500 Dogs)  
+- **Test Data:** 50 unseen images (mixed cats and dogs)
 
-## 🐾 Dataset Information
-
-- **Dataset:** [Cats vs Dogs Filtered Dataset](https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip)  
-- **Provided By:** TensorFlow  
-- **Classes:** 2 → `cats` and `dogs`  
-- **Images:** ~3,000 total  
-
-The dataset is automatically downloaded and extracted in Colab into these folders:
-
+Dataset is automatically downloaded and extracted using Python code.
 
 ---
 
-## 🧠 Model Details
+## 🧠 Model Architecture
 
-The **CNN (Convolutional Neural Network)** model is designed to identify important image features such as edges, shapes, and colors to differentiate between cats and dogs.
+| Layer Type        | Details |
+|--------------------|---------|
+| **Conv2D** + ReLU | Feature extraction |
+| **MaxPooling2D**  | Dimensionality reduction |
+| **Conv2D** + ReLU | Deeper feature extraction |
+| **MaxPooling2D**  | Reduce spatial size |
+| **Flatten**        | Convert 2D → 1D |
+| **Dense (512)** + ReLU | Fully connected layer |
+| **Dense (1)** + Sigmoid | Output layer (Binary classification) |
 
-### Model Architecture
-- 3 × Convolution + MaxPooling layers  
-- 1 × Flatten layer  
-- 1 × Dense layer (512 units, ReLU)  
-- 1 × Output layer (Sigmoid activation)
-
-**Loss Function:** Binary Crossentropy  
-**Optimizer:** Adam  
-**Metrics:** Accuracy  
+The model uses **Binary Crossentropy** as loss and **Adam Optimizer** for training.
 
 ---
 
-## 🧮 Model Training and Validation
+## ⚙️ Training Setup
 
-- **Epochs:** 20  
 - **Batch Size:** 32  
-- **Training Set:** ~2000 images  
-- **Validation Set:** ~1000 images  
+- **Epochs:** 20  
+- **Image Size:** 150×150 pixels  
+- **Augmentation:** Rescale, Rotation, Zoom, Horizontal Flip  
 
-The model learns to generalize by minimizing the loss and maximizing accuracy over multiple epochs.
+Training and validation were monitored over epochs for accuracy and loss trends.
 
 ---
 
 ## 📈 Visualizations
 
 ### 🔹 Training vs Validation Accuracy
-Shows model accuracy improvement over epochs.
-
 ![Training Accuracy](assets/training_accuracy.png)
 
----
-
 ### 🔹 Training vs Validation Loss
-Displays loss reduction and convergence over time.
-
 ![Training Loss](assets/training_loss.png)
 
----
-
 ### 🔹 Confusion Matrix
-Represents correct and incorrect predictions for each class.
-
 ![Confusion Matrix](assets/confusion_matrix.png)
 
 ---
@@ -94,43 +64,56 @@ Represents correct and incorrect predictions for each class.
 
 | Metric | Description | Result |
 |--------|--------------|--------|
-| **Training Accuracy** | Accuracy on training data | 96% |
+| **Training Accuracy** | Model accuracy on training data | 96% |
 | **Validation Accuracy** | Accuracy on unseen validation data | 93% |
 | **Validation Loss** | Error rate | 0.21 |
 | **F1 Score** | Balance between precision & recall | 0.92 |
 
-✅ The model achieved **over 93% validation accuracy**, effectively distinguishing between cat and dog images.
+---
+
+## 📊 Results Visualization Gallery
+<div align="center">
+
+| Accuracy | Loss | Confusion Matrix |
+|-----------|------|------------------|
+| ![Accuracy](assets/training_accuracy.png) | ![Loss](assets/training_loss.png) | ![Confusion](assets/confusion_matrix.png) |
+
+</div>
 
 ---
 
-## 🧩 Key Learnings
+## 🚀 How to Run
 
-- CNNs automatically learn image features without manual extraction.  
-- Proper **data preprocessing** improves performance significantly.  
-- Comparing **training vs validation curves** helps detect overfitting.  
-- **Confusion matrix** gives insight into classification accuracy.  
+1. Open the project in **Google Colab**.  
+2. Run each cell sequentially.  
+3. Model will automatically:
+   - Download dataset  
+   - Train CNN  
+   - Evaluate model  
+   - Display visualizations  
 
----
-
-## 🔮 Future Enhancements
-
-- Use **Transfer Learning** (e.g., VGG16, ResNet50) for better accuracy.  
-- Apply **Data Augmentation** to increase dataset diversity.  
-- Add **Grad-CAM** visualization for interpretability.  
-- Create a **Streamlit web app** for real-time image predictions.  
+> 💡 You don’t need to run this on GitHub — it’s designed for **Colab execution only**.
 
 ---
 
 ## 👩‍💻 Author
 
 **Javeria Munir**  
-💼 GitHub: [@javeriamunir-dev](https://github.com/javeriamunir-dev)  
-📧 Email: javeriamunirbwn@email.com  
-
-> 🧠 *Developed entirely on Google Colab*  
-> ☁️ *A Deep Learning project for Computer Vision and Image Classification.*
+🔗 [GitHub Profile](https://github.com/javeriamunir-dev)
 
 ---
 
-⭐ *If you found this project interesting, please give it a star on GitHub!* ⭐
+## 🖼️ Folder Structure
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a **⭐ Star** on [GitHub](https://github.com/javeriamunir-dev/Cat-and-Dog-Image-Classifier)!
+
+---
+
+> 📌 *This project demonstrates end-to-end image classification using Convolutional Neural Networks (CNNs) — from dataset preprocessing to visualization and evaluation.*
+
+---
 
