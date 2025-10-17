@@ -54,7 +54,7 @@ The **CNN (Convolutional Neural Network)** model is designed to identify importa
 
 ## 🧮 Model Training and Validation
 
-- **Epochs:** 20  
+- **Epochs:** 5  
 - **Batch Size:** 32  
 - **Training Set:** ~2000 images  
 - **Validation Set:** ~1000 images  
