@@ -39,7 +39,7 @@ The model uses **Binary Crossentropy** as loss and **Adam Optimizer** for traini
 ## ⚙️ Training Setup
 
 - **Batch Size:** 32  
-- **Epochs:** 20  
+- **Epochs:** 5  
 - **Image Size:** 150×150 pixels  
 - **Augmentation:** Rescale, Rotation, Zoom, Horizontal Flip  
 
@@ -64,8 +64,8 @@ Training and validation were monitored over epochs for accuracy and loss trends.
 
 | Metric | Description | Result |
 |--------|--------------|--------|
-| **Training Accuracy** | Model accuracy on training data | 96% |
-| **Validation Accuracy** | Accuracy on unseen validation data | 93% |
+| **Training Accuracy** | Model accuracy on training data | 56.95|
+| **Validation Accuracy** | Accuracy on unseen validation data | 53.83|
 | **Validation Loss** | Error rate | 0.21 |
 | **F1 Score** | Balance between precision & recall | 0.92 |
 
